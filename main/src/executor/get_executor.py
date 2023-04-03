@@ -6,16 +6,17 @@ from main.src.executor.parking_executor import ParkingExecutor
 class ExecutorFactory:
 
     @staticmethod
-    def __get_executor(self, command):
-        if command == "create_parking_lot":
+    def get_executor(param):
+        if param == "create_parking_lot":
             return CreateParkingLotExecutor.__class__
 
-        elif command == "park":
+        elif param == "park":
             return ParkingExecutor.__class__
 
-        elif command == "leave":
+        elif param == "leave":
             return CarExitExecutor.__class__
 
+        """
         elif command == "status":
             return ParkingLotStatusExecutor.__class__
 
@@ -26,7 +27,10 @@ class ExecutorFactory:
             return FindSlotNumberByCarColour.__class__
 
         elif command == "slot_number_for_registration_number":
-            return FindSlotNumberByRegistrationNumber.__class__
+            return FindSlotNumberByRegistrationNumber.__class__"""
+
+
+
 
 
 

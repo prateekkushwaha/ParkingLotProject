@@ -5,11 +5,16 @@ from main.src.model.slot import Slot
 
 class ParkingLot:
 
-    def __init__(self, maxSlots):
-        self.maxSlots = maxSlots
-        self.ticket_manager = TicketManager()
-        self.parking_lot_manager = ParkingLotManager()
-        self.slots = self.create_slots(self.maxSlots)
+    __single_instance = ""
+
+    def __init__(self):
+        if self.__single_instance == "":
+            raise Exception("Parking lot already created")
+        else:
+            self.maxSlots = 0
+            self.ticket_manager = TicketManager()
+            self.parking_lot_manager = ParkingLotManager()
+            self.slots = []
 
     def get_slots(self):
         return self.slots
@@ -21,10 +26,8 @@ class ParkingLot:
         return self.parking_lot_manager
 
     def create_slots(self, maxSlots):
-        self.slots = []
         for i in range(1, maxSlots + 1):
             self.slots.append(Slot(i, i))
-        return self.slots
 
 
 

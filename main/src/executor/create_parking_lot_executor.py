@@ -5,7 +5,8 @@ from main.src.instructions.output import Output
 
 class CreateParkingLotExecutor(CommandExecutor):
 
-    def execute(self, slots):
-        parkingLot = ParkingLotCreator.getParkingLot(slots)
-        print(Output.Created_Parking_Lot, slots)
+    def execute(self, params):
+        __slots = int(params[0])
+        ParkingLotCreator.create_parking_lot(__slots)
+        print(Output.Created_Parking_Lot, __slots)
 

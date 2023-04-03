@@ -4,5 +4,5 @@ from abc import ABC, abstractmethod
 class CommandExecutor(ABC):
 
     @abstractmethod
-    def execute(self, slots):
+    def execute(self, params):
         pass

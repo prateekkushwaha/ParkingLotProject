@@ -1,13 +1,10 @@
-class ParkingLotCreator:
-    __shared_instance = "Parking Lot"
+from main.src.model.parking_lot import ParkingLot
 
-    def __init__(self):
-        if ParkingLotCreator.__shared_instance != "Parking Lot":
-            raise Exception("Parking lot already created")
-        ParkingLotCreator.__shared_instance = self
+
+class ParkingLotCreator:
 
     @staticmethod
-    def getParkingLot(self):
-        if ParkingLotCreator.__shared_instance == "Parking Lot":
-            ParkingLotCreator()
-        return ParkingLotCreator.__shared_instance
+    def create_parking_lot(max_slots):
+        ParkingLot.__single_instance = "Parking_Lot"
+        return ParkingLot().create_slots(max_slots)
+

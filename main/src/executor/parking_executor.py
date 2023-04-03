@@ -1,13 +1,12 @@
 from main.src.controller.ticket_manager import TicketManager
 from main.src.executor.command_executor import CommandExecutor
+from main.src.model.car import Car
+from main.src.model.parking_lot import ParkingLot
 
 
 class ParkingExecutor(CommandExecutor):
 
-    def __init__(self):
-        self.ticket_manager = None
-
-    def execute(self, slots):
-        self.ticket_manager = TicketManager()
-        ticket = self.ticket_manager.issueTicket()
+    def execute(self, params):
+        _car = Car(params[0], params[1])
+        ticket = ParkingLot().get_ticket_manager().issueTicket(_car)
         ticket.get_slot().assignCar(ticket.get_car())
