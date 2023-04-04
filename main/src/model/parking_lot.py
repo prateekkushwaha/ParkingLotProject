@@ -4,7 +4,6 @@ from main.src.model.slot import Slot
 
 
 class ParkingLot:
-
     __single_instance = ""
 
     def __init__(self):
@@ -28,10 +27,3 @@ class ParkingLot:
     def create_slots(self, maxSlots):
         for i in range(1, maxSlots + 1):
             self.slots.append(Slot(i, i))
-
-
-
-
-
-
-

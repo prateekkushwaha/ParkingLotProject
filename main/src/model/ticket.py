@@ -16,4 +16,3 @@ class Ticket:
 
     def get_ticket_status(self):
         return self.valid
-

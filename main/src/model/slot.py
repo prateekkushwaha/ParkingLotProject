@@ -17,4 +17,3 @@ class Slot:
             self.car = None
         else:
             raise Exception("Slot already empty")
-

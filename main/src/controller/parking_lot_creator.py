@@ -7,4 +7,3 @@ class ParkingLotCreator:
     def create_parking_lot(max_slots):
         ParkingLot.__single_instance = "Parking_Lot"
         return ParkingLot().create_slots(max_slots)
-

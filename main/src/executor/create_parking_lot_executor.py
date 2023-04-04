@@ -9,4 +9,3 @@ class CreateParkingLotExecutor(CommandExecutor):
         __slots = int(params[0])
         ParkingLotCreator.create_parking_lot(__slots)
         print(Output.Created_Parking_Lot, __slots)
-

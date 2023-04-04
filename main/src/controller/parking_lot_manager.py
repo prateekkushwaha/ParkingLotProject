@@ -1,11 +1,17 @@
+from model.parking_lot import ParkingLot
+
+
 class ParkingLotManager:
 
-    def get_slot_by_slot_number(self, slotNumber):
-        slots = self.parkingLot.get_slots()
+    def __init__(self):
+        self.slots = None
 
-        for slot in slots:
-            if slot.slotNumber == slotNumber:
-                return slot
+    def get_slot_by_slot_number(self, slotNumber):
+        self.slots = ParkingLot().get_slots()
+
+        for _slot in self.slots:
+            if _slot.slotNumber == slotNumber:
+                return _slot
         raise Exception("Illegal slot number")
 
     def get_car_by_slot_number(self, slotNumber):
@@ -13,10 +19,6 @@ class ParkingLotManager:
         return slot.car
 
     def get_available_slot(self, slots):
-        """
-
-        :rtype: Slot object if free slot is found, else -1
-        """
         for i in range(len(slots)):
             if slots[i] is None:
                 return i + 1

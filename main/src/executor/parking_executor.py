@@ -1,4 +1,3 @@
-from main.src.controller.ticket_manager import TicketManager
 from main.src.executor.command_executor import CommandExecutor
 from main.src.model.car import Car
 from main.src.model.parking_lot import ParkingLot

@@ -28,9 +28,3 @@ class ExecutorFactory:
 
         elif command == "slot_number_for_registration_number":
             return FindSlotNumberByRegistrationNumber.__class__"""
-
-
-
-
-
-
