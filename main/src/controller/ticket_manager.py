@@ -3,11 +3,10 @@ from src.model.ticket import Ticket
 
 class TicketManager:
 
-    def __init__(self, parking_lot):
+    def __init__(self):
         self._carsInParkingLot = 0
         self.tickets = []
-        self.parking_lot = parking_lot
-
+        
     def issueTicket(self, car, slot):
         self._carsInParkingLot += 1
         self.tickets.append(Ticket(car, slot))
