@@ -12,13 +12,13 @@ class ExecutorFactory:
             return CreateParkingLotExecutor()
 
         elif param == "park":
-            return ParkingExecutor.__class__
+            return ParkingExecutor()
 
         elif param == "leave":
-            return CarExitExecutor.__class__
+            return CarExitExecutor()
 
         elif param == "status":
-            return StatusExecutor.__class__
+            return StatusExecutor()
 
         """
         elif command == "registration_numbers_for_cars_with_colour":

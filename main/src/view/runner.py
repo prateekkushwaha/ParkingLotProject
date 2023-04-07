@@ -1,6 +1,3 @@
-from src.executor.command_executor import CommandExecutor
-
-
 class Runner:
 
     @staticmethod
