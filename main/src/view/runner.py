@@ -1,14 +1,14 @@
-from main.src.executor.get_executor import ExecutorFactory
+from src.executor.command_executor import CommandExecutor
 
 
 class Runner:
 
     @staticmethod
-    def runCommand(command):
-        commands = command.split(" ")
-        _executor_class = ExecutorFactory.get_executor(commands[0])
+    def runCommand(commands):
+        from src.executor.get_executor import ExecutorFactory
+        executor = ExecutorFactory.get_executor(commands[0])
 
         if len(commands) > 1:
-            _executor_class.execute(commands[1:])
+            executor.execute(commands[1:])
         else:
-            _executor_class.execute([])
+            executor.execute([])

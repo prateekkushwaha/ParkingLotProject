@@ -1,5 +1,5 @@
-from main.src.executor.command_executor import CommandExecutor
-from main.src.model.parking_lot import ParkingLot
+from src.executor.command_executor import CommandExecutor
+from src.model.parking_lot import ParkingLot
 
 
 class CarExitExecutor(CommandExecutor):

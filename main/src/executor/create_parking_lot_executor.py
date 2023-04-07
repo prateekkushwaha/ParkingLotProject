@@ -1,11 +1,15 @@
-from main.src.controller.parking_lot_creator import ParkingLotCreator
-from main.src.executor.command_executor import CommandExecutor
-from main.src.instructions.output import Output
+from src.controller.slot_creator import SlotCreator
+from src.executor.command_executor import CommandExecutor
+from src.instructions.output import Output
 
 
 class CreateParkingLotExecutor(CommandExecutor):
 
+    def __init__(self):
+        pass
+
     def execute(self, params):
-        __slots = int(params[0])
-        ParkingLotCreator.create_parking_lot(__slots)
-        print(Output.Created_Parking_Lot, __slots)
+        _slots = int(params[0])
+        _slot_creator = SlotCreator()
+        _slot_creator.create_slots(_slots)
+        print(Output.Created_Parking_Lot.value.format(_slots))

@@ -1,29 +1,14 @@
-from main.src.controller.parking_lot_manager import ParkingLotManager
-from main.src.controller.ticket_manager import TicketManager
-from main.src.model.slot import Slot
+from logging import info
 
 
-class ParkingLot:
-    __single_instance = ""
+class ParkingLot(object):
+    _instance = None
+    max_slots = 0
+    slots = []
 
-    def __init__(self):
-        if self.__single_instance == "":
-            raise Exception("Parking lot already created")
-        else:
-            self.maxSlots = 0
-            self.ticket_manager = TicketManager()
-            self.parking_lot_manager = ParkingLotManager()
-            self.slots = []
+    def __new__(cls):
+        if cls._instance is None:
+            info('Creating parking lot object')
+            cls._instance = super(ParkingLot, cls).__new__(cls)
+        return cls._instance
 
-    def get_slots(self):
-        return self.slots
-
-    def get_ticket_manager(self):
-        return self.ticket_manager
-
-    def get_parking_lot_manager(self):
-        return self.parking_lot_manager
-
-    def create_slots(self, maxSlots):
-        for i in range(1, maxSlots + 1):
-            self.slots.append(Slot(i, i))

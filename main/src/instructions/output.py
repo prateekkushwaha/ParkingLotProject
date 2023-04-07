@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class Output(Enum):
-    Created_Parking_Lot = "Created a parking lot with %s slots"
+    Created_Parking_Lot = "Created a parking lot with {} slots"
     Allocated_Slot_Number = "Allocated slot number: %s"
     Slot_Number_Free = "Slot number %s is free"
     Status_Table_Cols = "Slot No. Registration No Colour"

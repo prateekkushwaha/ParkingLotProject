@@ -1,6 +1,7 @@
-from main.src.executor.car_exit_executor import CarExitExecutor
-from main.src.executor.create_parking_lot_executor import CreateParkingLotExecutor
-from main.src.executor.parking_executor import ParkingExecutor
+from src.executor.status_executor import StatusExecutor
+from src.executor.car_exit_executor import CarExitExecutor
+from src.executor.create_parking_lot_executor import CreateParkingLotExecutor
+from src.executor.parking_executor import ParkingExecutor
 
 
 class ExecutorFactory:
@@ -8,7 +9,7 @@ class ExecutorFactory:
     @staticmethod
     def get_executor(param):
         if param == "create_parking_lot":
-            return CreateParkingLotExecutor.__class__
+            return CreateParkingLotExecutor()
 
         elif param == "park":
             return ParkingExecutor.__class__
@@ -16,10 +17,10 @@ class ExecutorFactory:
         elif param == "leave":
             return CarExitExecutor.__class__
 
-        """
-        elif command == "status":
-            return ParkingLotStatusExecutor.__class__
+        elif param == "status":
+            return StatusExecutor.__class__
 
+        """
         elif command == "registration_numbers_for_cars_with_colour":
             return FindCarByColorExecutor.__class__
 

@@ -1,11 +1,5 @@
 class Car:
 
-    def __init__(self, registrationNumber, carColour):
-        self.registrationNumber = registrationNumber
-        self.carColour = carColour
-
-    def getCarRegistrationNumber(self):
-        return self.registrationNumber
-
-    def getCarColour(self):
-        return self.carColour
+    def __init__(self, registration_number, car_colour):
+        self.registration_number = registration_number
+        self.car_colour = car_colour

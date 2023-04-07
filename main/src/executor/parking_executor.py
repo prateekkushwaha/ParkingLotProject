@@ -1,6 +1,6 @@
-from main.src.executor.command_executor import CommandExecutor
-from main.src.model.car import Car
-from main.src.model.parking_lot import ParkingLot
+from src.executor.command_executor import CommandExecutor
+from src.model.car import Car
+from src.model.parking_lot import ParkingLot
 
 
 class ParkingExecutor(CommandExecutor):
