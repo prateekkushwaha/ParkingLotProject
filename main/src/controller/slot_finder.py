@@ -16,3 +16,8 @@ class SlotFinder:
                 _distance = slot.entryPointDistance
 
         return _desired_slot
+
+    def find_slot(self, slot_number):
+        for slot in self.parking_lot.slots:
+            if slot.slot_number == int(slot_number):
+                return slot
